@@ -1,7 +1,7 @@
 public class MovieRental {
     private Movie movie;
     private int daysRented;
-    private MovieRentStrategy movieRentStrategy;
+    private MovieRentStrategy movieRentStrategy = new MovieRentStrategy();
     
     public MovieRental(Movie movie, int daysRented) {
             this.movie = movie;
