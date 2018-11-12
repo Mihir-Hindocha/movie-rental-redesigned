@@ -19,7 +19,6 @@ public class Customer {
     }
 
 
-
     public String getStatement() {
 
         double totalAmount = 0;
@@ -33,7 +32,6 @@ public class Customer {
             MovieRental each = (MovieRental) rentals.next();
 
             thisAmount = each.calculateRent();
-
 
             // add frequent renter points
             frequentRenterPoints++;

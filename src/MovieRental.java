@@ -17,6 +17,6 @@ public class MovieRental {
     }
 
     public double calculateRent(){
-        return movieRentStrategy.calculateRent(this);
+        return new MovieFactory().getMovieRentStrategy(this).calculateRent(this);
     }
 }

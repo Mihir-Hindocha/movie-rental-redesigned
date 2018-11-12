@@ -1,8 +1,10 @@
 public class NewReleaseRentStrategy extends MovieRentStrategy {
-    @Override
+
+    public static final int NEW_RELEASE_PRICE = 3;
+
     public double calculateRent(MovieRental each) {
         double thisAmount = 0.0;
-        thisAmount += each.getDaysRented() * 3;
+        thisAmount += each.getDaysRented() * NEW_RELEASE_PRICE;
         return thisAmount;
     }
 }
