@@ -1,4 +1,4 @@
-# movie-rental-redesigned
+# book-rental-redesigned
 This project is part of Object Oriented Software Engineering Class. I have to redesign the application such that it is well-organised, scalable, maintainable and can be easily understood.
 
 The requirements of this project are that:-

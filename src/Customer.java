@@ -1,17 +1,35 @@
+import Books.*;
+import Movie.*;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Customer {
     private String name;
-    private ArrayList<MovieRental> movieRentals = new ArrayList<>();
+    private ArrayList<Movie> movieRentals = new ArrayList<>();
+    private ArrayList<Movie> moviePurchases = new ArrayList<>();
+    private ArrayList<Book> bookRentals = new ArrayList<>();
+    private ArrayList<Book> bookPurchases = new ArrayList<>();
 
 
     public Customer(String name) {
         this.name = name;
     }
 
-    public void addRental(MovieRental arg) {
-        movieRentals.add(arg);
+    public void addMovieRental(MovieRental newMovie) {
+        movieRentals.add(newMovie);
+    }
+
+    public void addMoviePurchase(MoviePurchase newMovie) {
+        moviePurchases.add(newMovie);
+    }
+
+    public void addBookRental(Book newBook) {
+        bookRentals.add(newBook);
+    }
+
+    public void addBookPurchase(BookPurchase newBook) {
+        bookPurchases.add(newBook);
     }
 
     public String getName() {
@@ -23,8 +41,9 @@ public class Customer {
 
         double totalAmount = 0;
         int frequentRenterPoints = 0;
-        Iterator<MovieRental> rentals = this.movieRentals.iterator();
-        String result = "MovieRental Record for " + getName() + "\n";
+        Iterator<Movie> rentals = this.movieRentals.iterator();
+        String result = "Rental Record for " + getName() + "\n\n";
+        result += "<Name>" + getName() + "</Name>" + "\n";
 
         while (rentals.hasNext()) {
 
@@ -43,15 +62,17 @@ public class Customer {
             }
 
             // show figures for this rental
-            result += "\t" + each.getMovie().getTitle() +
-                    "\t" + String.valueOf(thisAmount) + "\n";
+            result += "\t" + "<Movie> " + each.getMovie().getTitle() + "</Movie> "+
+                    "\n\t\t" + "<Value> " + String.valueOf(thisAmount) + "</Value>" + "\n";
             totalAmount += thisAmount;
         }
 
         // add footer lines
-        result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
-        result += "You earned " + String.valueOf(frequentRenterPoints) +
-                " frequent renter points";
+        result += "<TotalAmount> " + String.valueOf(totalAmount) + "</TotalAmount> " + "\n";
+        result += "<FrequentRenterPoints> " + String.valueOf(frequentRenterPoints) +
+                " </FrequentRenterPoints>";
         return result;
     }
+
+
 }
