@@ -12,7 +12,7 @@ public class MoviePurchase extends Movie{
      */
     private MovieStrategy movieStrategy = new MovieStrategy();
 
-    MoviePurchase(Movie movie){
+    public MoviePurchase(Movie movie){
         this.movie = movie;
     }
     public Movie getMovie() {
