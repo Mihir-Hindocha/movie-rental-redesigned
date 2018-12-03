@@ -1,4 +1,6 @@
-package Movie;
+package movie;
+
+import movie_rental.Customer;
 
 /**
  * Class defined to implement the Strategy Pattern for calculating the rent and getting the purchase price dynamically at runtime based on the
@@ -26,4 +28,18 @@ public class MovieStrategy {
         thisAmount = movieStrategy.getPurchasePrice(each);
         return thisAmount;
     }
+    
+    /**
+	 * Added this method to calculate the FrequentRenterPoints for particular Rental. Further factory pattern and polymorphism
+	 * are applied to this method.
+     * @param customer 
+	 */
+	public int calculatePoints(MovieRental each){
+	    int frequentRenterPoints = 0;
+	    MovieStrategy movieStrategy = new MovieFactory().getMoviePointsStrategy(each);
+	    frequentRenterPoints = movieStrategy.calculatePoints(each);
+	    return frequentRenterPoints;
+	}
 }
+
+	

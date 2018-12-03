@@ -1,4 +1,4 @@
-package Movie;
+package movie;
 
 /**
  * MoviePurchase inherits from Movie class and the user's request regarding purchase are completed using this class.

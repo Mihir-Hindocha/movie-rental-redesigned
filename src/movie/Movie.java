@@ -1,4 +1,4 @@
-package Movie;
+package movie;
 
 /**
  * Class defined to store the different types of Movies for Rent and Sell.
